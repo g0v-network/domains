@@ -1,0 +1,27 @@
+name: domain-sync
+
+on:
+  # Deploy config whenever DNS changes are pushed to main.
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/domain-sync.yml'
+      - '*./*.yaml'
+      - 'config.yaml'
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+jobs:
+  publish:
+    name: Publish DNS config from main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Publish
+        uses: solvaholic/octodns-sync@v2.1.2
+        with:
+          config_path: config.yaml
+          #doit: '--doit'
