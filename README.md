@@ -1,4 +1,4 @@
-# g0v.network domains ![domain-sync](https://github.com/g0v-network/domains/workflows/domain-sync/badge.svg?branch=main)
+# g0v.network domains [![domain-sync][badge]][workflows]
 
 For automating management of some g0v-related domains via config files.
 
@@ -106,3 +106,5 @@ subdomains.
 
    <!-- Pre-filled file contents url encoded via tool. See: https://meyerweb.com/eric/tools/dencoder/ -->
    [new-subdomain]: https://github.com/g0v-network/domains/new/main?filename=g0v.network./my.example.g0v.network.yaml&value=my.example%3A%0A%20%20-%20type%3A%20A%0A%20%20%20%20values%3A%0A%20%20%20%20%20%20-%20123.45.67.89%0A%20%20%20%20metdata%3A%0A%20%20%20%20%20%20repository%3A%20https%3A%2F%2Fgithub.com%2Fg0v-network%2Ffoo%0A%20%20%20%20%20%20maintainer%3A%0A%20%20%20%20%20%20%20%20-%20some-github-user
+   [badge]: https://github.com/g0v-network/domains/workflows/domain-sync/badge.svg?branch=main
+   [workflows]: https://github.com/g0v-network/domains/actions?query=workflow:domain-sync
