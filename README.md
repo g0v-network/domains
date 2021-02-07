@@ -1,8 +1,14 @@
 # g0v.network domains
 
-For automating management of the `g0v.network` domain via config files.
+For automating management of some g0v-related domains via config files.
 
-Changing or adding DNS records in `main` branach of this repository with update
+The following damains can be managed here:
+- g0v.network
+- g0v.ca
+- c4nada.ca
+- t0ronto.ca
+
+Changing or adding DNS records in `main` branch of this repository with update
 the actual domain records.
 
 Inspired by [`g0v/domain`][g0v/domain]
@@ -37,11 +43,13 @@ see example):
 
 ### Delete an existing subdomain
 
-Delete a file or a specific record type within a file. Our automation will sync this deletion when it runs.
+Delete a file or a specific record type within a file. Our automation will sync
+this deletion when it runs.
 
 ### Modify an existing subdomain
 
-Modify an [existing file][existing]. Our automation will sync this change when it runs.
+Modify an [existing file][existing]. Our automation will sync this change when
+it runs.
 
    [existing]: /g0v.network./g0v.network.yaml
 
@@ -51,7 +59,11 @@ To contribute changes to our automation, you'll likely want to be able to run it
 
 - Python 3
 - Cloudflare account
-- Cloudflare site: `g0v.network` (can "fake it", no need to actually have access to it)
+- Cloudflare sites: (can "fake it"; no need to actually have access to it)
+  - `g0v.network`
+  - `g0v.ca`
+  - `c4nada.ca`
+  - `t0ronto.ca`
 - Cloudflare API token (see instructions in `sample.env`)
 
 ```
@@ -79,7 +91,8 @@ pipenv run octodns-sync --config-file config.yaml --doit
 
 ## :muscle: Contributing
 
-Please open an issue or pull request in order to apply for a new subdomain.
+Please open an issue or pull request in order to create/update/delete any
+subdomains.
 
 ## :copyright: License
 

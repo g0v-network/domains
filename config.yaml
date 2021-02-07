@@ -20,3 +20,18 @@ zones:
       - config-files
     targets:
       - cloudflare
+  g0v.ca.:
+    sources:
+      - config-files
+    targets:
+      - cloudflare
+  t0ronto.ca.:
+    sources:
+      - config-files
+    targets:
+      - cloudflare
+  c4nada.ca.:
+    sources:
+      - config-files
+    targets:
+      - cloudflare

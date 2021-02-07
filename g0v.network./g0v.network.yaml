@@ -1,5 +1,7 @@
 ---
 '':
+  - type: TXT
+    value: admin=patcon
   - type: A
     value: 162.247.75.222
     octodns:

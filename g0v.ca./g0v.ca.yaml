@@ -1,0 +1,18 @@
+---
+'':
+  - type: TXT
+    values:
+      # Who has admin for g0v.ca domain
+      - admin=patcon
+      # Used for redirect service below
+      - 301 https://g0v.tw/
+  - type: A
+    # See: https://301.ronny.tw/
+    value: 52.69.187.52
+    octodns:
+      cloudflare:
+        proxied: true
+    metdata:
+      repository: https://github.com/ronnywang/301-service
+      maintainer:
+        - ronnywang
