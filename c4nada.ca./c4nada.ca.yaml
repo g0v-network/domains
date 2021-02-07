@@ -2,7 +2,7 @@
 '':
   - type: TXT
     values:
-      # Who has admin for g0v.ca domain
+      # Who has admin for this domain
       - admin=patcon
       # Used for redirect service below
       - 301 https://g0v.tw/

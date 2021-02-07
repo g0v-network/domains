@@ -1,7 +1,30 @@
 ---
 '':
   - type: TXT
-    value: admin=patcon
+    values:
+      # Who has admin for this domain
+      - admin=patcon
+
+      # Email forwarding via forwardemail.net
+      # See: MX record below
+
+      # files@g0v.network
+      - forward-email=files:devinbalkind@gmail.com
+      - forward-email=files:cs@compositescollective.com
+
+      # nobodies@g0v.network
+      - forward-email=nobodies:ebarry@gmail.com
+      - forward-email=nobodies:patrick.c.connolly@gmail.com
+      - forward-email=nobodies:darshana@dznarayanan.com
+      - forward-email=nobodies:cs@compositescollective.com
+      - forward-email=nobodies:darshana.narayana@gmail.com
+
+      # nyctraining@g0v.network
+      - forward-email=nyctraining:ebarry@gmail.com
+      - forward-email=nyctraining:patrick.c.connolly@gmail.com
+      - forward-email=nyctraining:darshana@dznarayanan.com
+      - forward-email=nyctraining:cs@compositescollective.com
+      - forward-email=nyctraining:devinbalkind@gmail.com
   - type: A
     value: 162.247.75.222
     octodns:
@@ -12,6 +35,10 @@
       maintainer:
         - patcon
   - type: MX
-    value:
-      exchange: erica.mayfirst.org.
-      preference: 0
+    values:
+      # Allow use of forwardemail.net
+      # See: https://forwardemail.net/en/faq#how-do-i-get-started-and-set-up-email-forwarding
+      - exchange: mx1.forwardemail.net.
+        preference: 10
+      - exchange: mx2.forwardemail.net.
+        preference: 10
