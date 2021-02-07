@@ -1,4 +1,4 @@
-# g0v.network domains
+# g0v.network domains ![domain-sync](https://github.com/g0v-network/domains/workflows/domain-sync/badge.svg?branch=main)
 
 For automating management of some g0v-related domains via config files.
 
@@ -8,7 +8,7 @@ The following damains can be managed here:
 - c4nada.ca
 - t0ronto.ca
 
-Changing or adding DNS records in `main` branch of this repository with update
+Changing or adding DNS records in `main` branch of this repository will update
 the actual domain records.
 
 Inspired by [`g0v/domain`][g0v/domain]
