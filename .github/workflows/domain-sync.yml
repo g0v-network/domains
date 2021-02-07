@@ -24,4 +24,4 @@ jobs:
         uses: solvaholic/octodns-sync@v2.1.2
         with:
           config_path: config.yaml
-          #doit: '--doit'
+          doit: '--doit'
