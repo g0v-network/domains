@@ -3,10 +3,10 @@
 For automating management of some g0v-related domains via config files.
 
 The following damains can be managed here:
-- g0v.network
-- g0v.ca
-- c4nada.ca
-- t0ronto.ca
+- `g0v.network`
+- `g0v.ca`
+- `c4nada.ca`
+- `t0ronto.ca`
 
 Changing or adding DNS records in `main` branch of this repository will update
 the actual domain records.
@@ -19,9 +19,15 @@ Inspired by [`g0v/domain`][g0v/domain]
 
 ## Technologies Used
 
-- [**octoDNS.**][octodns]
+- [**YAML.**][yaml] A human-friendly configuration file format.
+- [**octoDNS.**][octodns] Command-line tool to update domain records from files -- infra-as-code!
+- [**GitHub Actions.**][gh-actions] Continuous integration platform to run automation in the cloud.
+  - [**octoDNS Sync action.**][octosync] Helps validate and run octoDNS.
 
+   [yaml]: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
    [octodns]: https://github.com/octodns/octodns
+   [gh-actions]: https://github.com/features/actions
+   [octosync]: https://github.com/solvaholic/octodns-sync
 
 ## Usage
 
