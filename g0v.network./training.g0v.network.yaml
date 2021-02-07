@@ -1,0 +1,11 @@
+---
+training:
+  type: CNAME
+  value: trainingg0vnetwork.netlify.com.
+  octodns:
+    cloudflare:
+      proxied: true
+  metadata:
+    repo: https://github.com/g0v-network/training.g0v.network
+    maintainer:
+      - patcon

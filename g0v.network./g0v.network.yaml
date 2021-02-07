@@ -1,0 +1,15 @@
+---
+'':
+  - type: A
+    value: 162.247.75.222
+    octodns:
+      cloudflare:
+        proxied: true
+    metdata:
+      repository: https://github.com/g0v-network/g0v.network
+      maintainer:
+        - patcon
+  - type: MX
+    value:
+      exchange: erica.mayfirst.org.
+      preference: 0

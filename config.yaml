@@ -1,0 +1,22 @@
+---
+manager:
+  max_workers: 2
+
+providers:
+  config-files:
+    class: octodns.provider.yaml.SplitYamlProvider
+    directory: .
+    default_ttl: 120
+    enforce_order: false
+    # Error when dups found
+    populate_should_replace: false
+  cloudflare:
+    class: octodns.provider.cloudflare.CloudflareProvider
+    token: env/CLOUDFLARE_API_TOKEN
+
+zones:
+  g0v.network.:
+    sources:
+      - config-files
+    targets:
+      - cloudflare
