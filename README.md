@@ -45,8 +45,6 @@ see example):
 
 [`g0v.network./my.example.g0v.network.yaml`][new-subdomain]
 
-   [new-subdomain]: https://github.com/g0v-network/domains/new/main?filename=g0v.network./my.example.g0v.network.yaml&value=my.example%3A%0A%20%20-%20type%3A%20A%0A%20%20%20%20value%3A%0A%20%20%20%20%20%20-%20123.45.67.89
-
 ### Delete an existing subdomain
 
 Delete a file or a specific record type within a file. Our automation will sync
@@ -103,3 +101,8 @@ subdomains.
 ## :copyright: License
 
 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+<!-- Links -->
+
+   <!-- Pre-filled file contents url encoded via tool. See: https://meyerweb.com/eric/tools/dencoder/ -->
+   [new-subdomain]: https://github.com/g0v-network/domains/new/main?filename=g0v.network./my.example.g0v.network.yaml&value=my.example%3A%0A%20%20-%20type%3A%20A%0A%20%20%20%20values%3A%0A%20%20%20%20%20%20-%20123.45.67.89%0A%20%20%20%20metdata%3A%0A%20%20%20%20%20%20repository%3A%20https%3A%2F%2Fgithub.com%2Fg0v-network%2Ffoo%0A%20%20%20%20%20%20maintainer%3A%0A%20%20%20%20%20%20%20%20-%20some-github-user
