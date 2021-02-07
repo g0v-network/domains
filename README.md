@@ -96,6 +96,8 @@ pipenv run octodns-sync --config-file config.yaml --doit
 Please open an issue or pull request in order to create/update/delete any
 subdomains.
 
+See [`docs/HOWTO.md`](/docs/HOWTO.md) for detailed instructions.
+
 ## :copyright: License
 
 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
