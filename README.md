@@ -15,8 +15,6 @@ Inspired by [`g0v/domain`][g0v/domain]
 
    [g0v/domain]: https://github.com/g0v/domain
 
-**Note:** Work in progress. Not yet functional.
-
 ## Technologies Used
 
 - [**YAML.**][yaml] A human-friendly configuration file format.
