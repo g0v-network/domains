@@ -177,14 +177,14 @@ hands.
 4. We'll create a new zone for your domain in the Cloudflare admin interface.
 5. We'll add that zone to our existing Cloudflare API token, so it can be managed by our automation.
 6. We'll merge the pull request after review
-  - Cloudflare's nameserver will be updated on merge, but your registrar won't be pointed to it yet.
+    - Cloudflare's nameserver will be updated on merge, but your registrar won't be pointed to it yet.
 7. After merging, point your registrar at our Cloudflare nameservers:
     ```
     clyde.ns.cloudflare.com
     tina.ns.cloudflare.com
     ```
-- Confirm that your DNS records work as expected, using:
-  - DNS Nameserver Checker: https://mxtoolbox.com/SuperTool.aspx?action=dns:g0v.ca&run=toolpage
+8. Confirm that your DNS records work as expected, using:
+    - DNS Nameserver Checker: https://mxtoolbox.com/SuperTool.aspx?action=dns:g0v.ca&run=toolpage
 
 <details>
   <summary>Adding <code>example.com</code> as newly managed domain</summary>
