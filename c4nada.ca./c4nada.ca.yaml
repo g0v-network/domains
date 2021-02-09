@@ -4,11 +4,10 @@
     values:
       # Who has admin for this domain
       - admin=patcon
-      # Used for redirect service below
+      # Used for 301 redirect service below
       - 301 https://g0v.tw/
-  - type: A
-    # See: https://301.ronny.tw/
-    value: 52.69.187.52
+  - type: ALIAS
+    value: 301.ronny.tw.
     octodns:
       cloudflare:
         proxied: true
