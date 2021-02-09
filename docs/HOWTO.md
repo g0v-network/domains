@@ -186,6 +186,8 @@ hands.
 8. Confirm that your DNS records work as expected, using:
     - DNS Nameserver Checker: https://mxtoolbox.com/SuperTool.aspx?action=dns:g0v.ca&run=toolpage
 
+### Examples
+
 <details>
   <summary>Adding <code>example.com</code> as newly managed domain</summary>
 
