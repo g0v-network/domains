@@ -34,26 +34,7 @@ The intended way to use this repository is via pull request directly on GitHub.
 (You should only need to clone this code locally in order to improve the
 automation part of this repository. See Development section.)
 
-### Create a new subdomain
-
-Create a new YAML file, and fill it out. For example, to create
-`my.example.g0v.network`, you'd create a config file with the full subdomain
-name, with a key inside it for `my.example`. Like so (click through the link to
-see example):
-
-[`g0v.network./my.example.g0v.network.yaml`][new-subdomain]
-
-### Delete an existing subdomain
-
-Delete a file or a specific record type within a file. Our automation will sync
-this deletion when it runs.
-
-### Modify an existing subdomain
-
-Modify an [existing file][existing]. Our automation will sync this change when
-it runs.
-
-   [existing]: /g0v.network./g0v.network.yaml
+For support in managing common DNS changes, see [`docs/HOWTO.md`](/docs/HOWTO.md).
 
 ## Development
 
