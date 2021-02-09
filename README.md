@@ -86,13 +86,13 @@ cd domains
 
 pipenv install
 
-# Copy and modify as needed with API token
-cp sample.env .env
-
 # Validate your config locally
 pipenv run octodns-validate --config-file config.yaml
 
-# Do a dry run (no changes will be made)
+# Copy and modify as needed with API token
+cp sample.env .env
+
+# Do a dry run against Cloudflare (no changes will be made)
 pipenv run octodns-sync --config-file config.yaml
 
 # Do a REAL run (!!!)
