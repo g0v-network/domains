@@ -15,7 +15,21 @@ Inspired by [`g0v/domain`][g0v/domain]
 
    [g0v/domain]: https://github.com/g0v/domain
 
-## Technologies Used
+## Table of Contents
+
+- [Technologies Used][tech]
+- [Usage][usage]
+- [Development][dev]
+- [Contributing][contrib]
+- [Licensing][license]
+
+   [tech]: #hammer_and_wrench-technologies-used
+   [usage]: #balloon-usage
+   [dev]: #woman_technologist-development
+   [contrib]: #muscle-contributing
+   [license]: #copyright-license
+
+## :hammer_and_wrench: Technologies Used
 
 - [**YAML.**][yaml] A human-friendly configuration file format.
 - [**octoDNS.**][octodns] Command-line tool to update domain records from files -- infra-as-code!
@@ -27,16 +41,18 @@ Inspired by [`g0v/domain`][g0v/domain]
    [gh-actions]: https://github.com/features/actions
    [octosync]: https://github.com/solvaholic/octodns-sync
 
-## Usage
+## :balloon: Usage
 
 The intended way to use this repository is via pull request directly on GitHub.
 
-(You should only need to clone this code locally in order to improve the
-automation part of this repository. See Development section.)
-
 For support in managing common DNS changes, see [`docs/HOWTO.md`](/docs/HOWTO.md).
 
-## Development
+To learn to submit changes, see [Contributing][contrib]
+
+<sub>(You should only need to clone this code locally if working on the
+automation itself. See <a href="#woman_technologist-development">Development section</a>.)</sub>
+
+## :woman_technologist: Development
 
 To contribute changes to our automation, you'll likely want to be able to run it locally. Here's what you'll need:
 
