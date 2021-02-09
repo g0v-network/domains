@@ -166,9 +166,25 @@ new subdomain using a new config file.
 
 ### Add a New Domain
 
-- Point nameservers to Cloudflare #todo
-- #todo can octodns create new zonefile automatically?
-- DNS Nameserver Checker: https://mxtoolbox.com/SuperTool.aspx?action=dns:g0v.ca&run=toolpage
+If you'd like to start managing a new domain through this repo, you can do
+that! You'll only need to point your registrar at our Cloudflare nameservers --
+you keep the domain with your registrar, and the domain itself stays in your
+hands.
+
+1. Create a new domain directory and config (see below)
+2. Copy your existing records into appropriate yaml config.
+3. Submit a pull request.
+4. We'll create a new zone for your domain in the Cloudflare admin interface.
+5. We'll add that zone to our existing Cloudflare API token, so it can be managed by our automation.
+6. We'll merge the pull request after review
+  - Cloudflare's nameserver will be updated on merge, but your registrar won't be pointed to it yet.
+7. After merging, point your registrar at our Cloudflare nameservers:
+    ```
+    clyde.ns.cloudflare.com
+    tina.ns.cloudflare.com
+    ```
+- Confirm that your DNS records work as expected, using:
+  - DNS Nameserver Checker: https://mxtoolbox.com/SuperTool.aspx?action=dns:g0v.ca&run=toolpage
 
 <details>
   <summary>Adding <code>example.com</code> as newly managed domain</summary>

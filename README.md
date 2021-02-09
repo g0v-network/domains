@@ -45,7 +45,8 @@ Inspired by [`g0v/domain`][g0v/domain]
 
 The intended way to use this repository is via pull request directly on GitHub.
 
-For support in managing common DNS changes, see [`docs/HOWTO.md`](/docs/HOWTO.md).
+For support in managing common DNS changes and adding new domains, see
+[`docs/HOWTO.md`](/docs/HOWTO.md).
 
 To learn to submit changes, see [Contributing][contrib]
 
