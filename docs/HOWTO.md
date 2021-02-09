@@ -171,7 +171,7 @@ new subdomain using a new config file.
 - DNS Nameserver Checker: https://mxtoolbox.com/SuperTool.aspx?action=dns:g0v.ca&run=toolpage
 
 <details>
-  <summary>Sample File Changes</summary>
+  <summary>Adding <code>example.com</code> as newly managed domain</summary>
 
 ```diff
 diff --git a/README.md b/README.md
