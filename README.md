@@ -59,20 +59,34 @@ it runs.
 
 To contribute changes to our automation, you'll likely want to be able to run it locally. Here's what you'll need:
 
-- Python 3
-- Cloudflare account
-- Cloudflare sites: (can "fake it"; no need to actually have access to it)
-  - `g0v.network`
-  - `g0v.ca`
-  - `c4nada.ca`
-  - `t0ronto.ca`
-- Cloudflare API token (see instructions in `sample.env`)
+<details>
+  <summary>Prerequisites</summary>
+
+  - [Install][py3] Python 3
+  - [Install][pipenv] `pipenv`.
+  - [Register][cf-user] a Cloudflare user account
+    - any non-special account will do
+  - [Add][cf-website] each Cloudflare domain/zone/website (those mentioned above)
+    - you can "fake it" by initiating the import process, without activating (ie. no need to have access to the actual domain)
+  - Generate a properly scoped Cloudflare API token
+    - [Documentation][cf-token-docs] for creating tokens [in your profile][cf-token]
+    - Permissions: `Zone | DNS | Edit`
+    - Zone Resources: `Include | Specific zone | example.com` for each zone/domain
+      - Alternatively: `Include | All zones from an account`
+
+</details>
+
+   [py3]: https://realpython.com/installing-python/
+   [pipenv]: https://pipenv.pypa.io/en/latest/#install-pipenv-today
+   [cf-user]: https://dash.cloudflare.com/sign-up
+   [cf-website]: https://support.cloudflare.com/hc/en-us/articles/201720164-Creating-a-Cloudflare-account-and-adding-a-website
+   [cf-token-docs]: https://support.cloudflare.com/hc/en-us/articles/200167836-Managing-API-Tokens-and-Keys#12345680
+   [cf-token]: https://dash.cloudflare.com/profile/api-tokens
 
 ```
 git clone https://github.com/g0v-network/domains
 cd domains
 
-brew install pipenv
 pipenv install
 
 # Copy and modify as needed with API token
