@@ -2,8 +2,8 @@ jim:
   - type: TXT
     values:
     - 301 https://jrootham.ca/
-  - type: CNAME
-    value: 301.ronny.tw.
+  - type: A
+    value: 52.69.187.52
     octodns:
       cloudflare:
         proxied: true
