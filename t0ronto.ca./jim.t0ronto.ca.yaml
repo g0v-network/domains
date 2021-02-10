@@ -2,7 +2,7 @@ jim:
   - type: TXT
     values:
     - 301 https://jrootham.ca/
-  - type: ALIAS
+  - type: CNAME
     value: 301.ronny.tw.
     octodns:
       cloudflare:
