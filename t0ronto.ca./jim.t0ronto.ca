@@ -1,0 +1,9 @@
+jim:
+  - type: TXT
+    values:
+    - 301 https://jrootham.ca/
+  - type: ALIAS
+    value: 301.ronny.tw.
+    octodns:
+      cloudflare:
+        proxied: true
