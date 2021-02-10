@@ -1,9 +1,0 @@
-jim:
-  - type: TXT
-    values:
-    - 301 https://jrootham.ca/
-  - type: A
-    value: 52.69.187.52
-    octodns:
-      cloudflare:
-        proxied: true

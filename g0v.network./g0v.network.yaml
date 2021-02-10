@@ -19,9 +19,6 @@
       - forward-email=nobodies:cs@compositescollective.com
       - forward-email=nobodies:darshana.narayana@gmail.com
       
-      # demo! gabby@g0v.network
-      - forward-email=gabby:teixeira.brie@gmail.com
-
       # nyctraining@g0v.network
       - forward-email=nyctraining:ebarry@gmail.com
       - forward-email=nyctraining:patrick.c.connolly@gmail.com
