@@ -1,0 +1,18 @@
+---
+polis-explorations:
+  - type: txt
+    value: 301 https://www.youtube.com/watch?v=pVJE6GXqzsw&list=PLSL_F7Lwul2dlI9J6-Nzz9_9Pz9AbcG2z
+    metdata:
+      maintainer:
+        - ballpointpenguin
+        - dsiddarth
+        - patcon
+  - type: ALIAS
+    value: 301.ronny.tw.
+    octodns:
+      cloudflare:
+        proxied: true
+    metdata:
+      repository: https://github.com/ronnywang/301-service
+      maintainer:
+        - ronnywang
