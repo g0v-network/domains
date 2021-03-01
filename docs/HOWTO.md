@@ -11,8 +11,8 @@ Our setup on Cloudflare supports the follow record types: ([octoDNS docs][])
 You'll mostly wish to use these common types:
 - `A`: most common and basic (ipv4)
 - `AAAA`: same as `A`, but for ipv6
-- `CNAME`: domain name aliases. often used in custom domains for hosted services like GitHub Pages, Heroku, etc.
-- `ALIAS`: basically same as `CNAME`, but works for root domain
+- `CNAME`: domain name aliases. only works on _subdomains_. often used in custom domains for hosted services like GitHub Pages, Heroku, etc.
+- `ALIAS`: similar to `CNAME`, but works only on _root domain_
 - `MX`: used to setting up email addresses
 - `TXT`: holds arbitrary text data
 
@@ -69,6 +69,19 @@ index 3050a90..2a62d42 100644
   <summary>Create <code>mysubdomain.g0v.ca</code> with redirect to <code>example.com</code></summary>
 
 ```diff
+diff --git a/config.yaml b/config.yaml
+index 3d10aed..4947530 100644
+--- a/config.yaml
++++ b/config.yaml
+@@ -21,6 +21,8 @@ zones:
+     targets:
+       - cloudflare
+   g0v.ca.:
++    # Allow TXT and CNAME to be created on same subdomain.
++    lenient: true
+     sources:
+       - config-files
+     targets:
 diff --git a/g0v.ca./mysubdomain.g0v.ca.yaml b/g0v.ca./mysubdomain.g0v.ca.yaml
 new file mode 100644
 index 0000000..7536024
@@ -81,7 +94,7 @@ index 0000000..7536024
 +    values:
 +      # Used for 301 redirect service below
 +      - 301 https://example.com/
-+  - type: ALIAS
++  - type: CNAME
 +    value: 301.ronny.tw.
 ```
 
