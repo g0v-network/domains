@@ -83,10 +83,22 @@ To contribute changes to our automation, you'll likely want to be able to run it
    [cf-token-docs]: https://support.cloudflare.com/hc/en-us/articles/200167836-Managing-API-Tokens-and-Keys#12345680
    [cf-token]: https://dash.cloudflare.com/profile/api-tokens
 
+To get started with this repo:
+
 ```
 git clone https://github.com/g0v-network/domains
 cd domains
+```
 
+For a list of all support commands available via make, type:
+
+```
+make
+```
+
+To run your first commands:
+
+```
 make setup
 
 # Validate your config locally
