@@ -27,6 +27,8 @@ jobs:
           if [ -n "$_files" ]; then git checkout "$_sha" -- $_files; fi
           # Set output 'sha' to $_sha
           echo "::set-output name=sha::${_sha}"
+      - name: Force HTML plan output
+        run: cat .github/config-plan-amendment.yaml >> config.yaml
       - name: Test changes to DNS config
         id: octodns-sync
         uses: solvaholic/octodns-sync@main

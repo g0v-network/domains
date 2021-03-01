@@ -1,0 +1,4 @@
+manager:
+  plan_outputs:
+    default:
+      class: octodns.provider.plan.PlanHtml
