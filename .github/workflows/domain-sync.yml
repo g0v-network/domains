@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Publish
-        uses: solvaholic/octodns-sync@v2.1.2
+        uses: solvaholic/octodns-sync@main
         with:
           config_path: config.yaml
           doit: '--doit'
