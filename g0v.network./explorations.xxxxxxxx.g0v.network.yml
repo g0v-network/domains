@@ -7,5 +7,5 @@ explorations.xxxxxxxx:
         - ballpointpenguin
         - dsiddarth
         - patcon
-  - type: ALIAS
+  - type: CNAME
     value: 301.ronny.tw.
