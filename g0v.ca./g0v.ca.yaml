@@ -8,10 +8,3 @@
       - 301 https://g0v.tw/
   - type: ALIAS
     value: 301.ronny.tw.
-    octodns:
-      cloudflare:
-        proxied: true
-    metdata:
-      repository: https://github.com/ronnywang/301-service
-      maintainer:
-        - ronnywang

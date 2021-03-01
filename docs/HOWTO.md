@@ -35,9 +35,9 @@ index 3050a90..474481e 100644
 --- a/g0v.ca./g0v.ca.yaml
 +++ b/g0v.ca./g0v.ca.yaml
 @@ -15,3 +15,7 @@
-       repository: https://github.com/ronnywang/301-service
-       maintainer:
-         - ronnywang
+       - 301 https://g0v.tw/
+   - type: ALIAS
+     value: 301.ronny.tw.
 +  - type: MX
 +    values:
 +      - exchange: mx.example.com.
@@ -61,7 +61,6 @@ index 3050a90..2a62d42 100644
 +      - google-site-verification=1234-abcd-5678-EFGH
    - type: ALIAS
      value: 301.ronny.tw.
-     octodns:
 ```
 
 </details>
@@ -75,7 +74,7 @@ new file mode 100644
 index 0000000..7536024
 --- /dev/null
 +++ b/g0v.ca./mysubdomain.g0v.ca.yaml
-@@ -0,0 +1,15 @@
+@@ -0,0 +1,8 @@
 +---
 +mysubdomain:
 +  - type: TXT
@@ -84,13 +83,6 @@ index 0000000..7536024
 +      - 301 https://example.com/
 +  - type: ALIAS
 +    value: 301.ronny.tw.
-+    octodns:
-+      cloudflare:
-+        proxied: true
-+    metdata:
-+      repository: https://github.com/ronnywang/301-service
-+      maintainer:
-+        - ronnywang
 ```
 
 </details>
