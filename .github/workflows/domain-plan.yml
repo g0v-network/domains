@@ -28,7 +28,7 @@ jobs:
           # Set output 'sha' to $_sha
           echo "::set-output name=sha::${_sha}"
       - name: Force HTML plan output
-        run: cat .github/config-plan-amendment.yaml >> config.yaml
+        run: cat .github/config-plan-amendment.yml >> config.yaml
       - name: Test changes to DNS config
         id: octodns-sync
         uses: solvaholic/octodns-sync@main
