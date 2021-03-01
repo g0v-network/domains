@@ -11,9 +11,12 @@ The following damains can be managed here:
 Changing or adding DNS records in `main` branch of this repository will update
 the actual domain records.
 
-Inspired by [`g0v/domain`][g0v/domain]
+Inspired by [`g0v/domain`][g0v/domain].
+Future intention is to adopt [g0v domain guidelines][guidelines-tw] ([English translation][guidelines-en]).
 
    [g0v/domain]: https://github.com/g0v/domain
+   [guidelines-tw]: https://docs.google.com/document/d/1g4unx-__fvCc6tPLeniPd_jb5EoIDALXOYkROWyVaTo/edit#
+   [guidelines-en]: https://translate.google.com/translate?sl=auto&tl=en&u=https://docs.google.com/document/d/e/2PACX-1vQzVmqKlZGqWjSj7SirbzIrv5c9SpCQqRpRGO04_N6LqbfXSez8DIQQP8GY38SMaUbtUVgnafw_aTwr/pub
 
 ## Table of Contents
 
