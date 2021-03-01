@@ -1,8 +1,13 @@
 on:
   pull_request_target:
+
 defaults:
   run:
     shell: bash
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
 jobs:
   test-and-comment:
     runs-on: ubuntu-20.04
