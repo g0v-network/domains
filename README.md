@@ -61,6 +61,7 @@ To contribute changes to our automation, you'll likely want to be able to run it
   <summary>Prerequisites</summary>
 
   - [Install][py3] Python 3
+  - [Install][make] `make`
   - [Install][pipenv] `pipenv`.
   - [Register][cf-user] a Cloudflare user account
     - any non-special account will do
@@ -75,32 +76,45 @@ To contribute changes to our automation, you'll likely want to be able to run it
 </details>
 
    [py3]: https://realpython.com/installing-python/
+   [make]: https://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/
    [pipenv]: https://pipenv.pypa.io/en/latest/#install-pipenv-today
    [cf-user]: https://dash.cloudflare.com/sign-up
    [cf-website]: https://support.cloudflare.com/hc/en-us/articles/201720164-Creating-a-Cloudflare-account-and-adding-a-website
    [cf-token-docs]: https://support.cloudflare.com/hc/en-us/articles/200167836-Managing-API-Tokens-and-Keys#12345680
    [cf-token]: https://dash.cloudflare.com/profile/api-tokens
 
+To get started with this repo:
+
 ```
 git clone https://github.com/g0v-network/domains
 cd domains
+```
 
-pipenv install
+For a list of all support commands available via make, type:
+
+```
+make
+```
+
+To run your first commands:
+
+```
+make setup
 
 # Validate your config locally
-pipenv run octodns-validate --config-file config.yaml
+make validate
 
 # Copy and modify as needed with API token
 cp sample.env .env
 
 # Do a dry run against Cloudflare (no changes will be made)
-pipenv run octodns-sync --config-file config.yaml
+make dry-run
 
 # Do a REAL run (!!!)
 #
 # WARNING: this is destructive, and will delete any records on a domain that
 # are not present in your configuration files.
-pipenv run octodns-sync --config-file config.yaml --doit
+make run
 ```
 
 ## :muscle: Contributing
