@@ -7,9 +7,13 @@ providers:
     class: octodns.provider.yaml.SplitYamlProvider
     directory: .
     default_ttl: 120
+<<<<<<< HEAD
     # Suffix for each domain's dir (default: '.')
     extension: .domain
     # Allow record keys to be out of alphabetical order.
+=======
+    # So YAML key order need not be alphabetical
+>>>>>>> Imported and converted civictech.ca DNS records from EasyDNS.
     enforce_order: false
     # Error when dups found
     populate_should_replace: false
@@ -43,6 +47,12 @@ zones:
     targets:
       - cloudflare
   g0teborg.se.:
+    sources:
+      - config-files
+    targets:
+      - cloudflare
+  civictech.ca.:
+    lenient: true
     sources:
       - config-files
     targets:

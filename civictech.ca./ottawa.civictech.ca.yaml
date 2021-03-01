@@ -1,0 +1,9 @@
+---
+ottawa: &redirect
+  - type: CNAME
+    value: 301.ronny.tw.
+  - type: TXT
+    value: 301 https://ottawacivictech.ca/
+
+yow:
+  <<: *redirect
