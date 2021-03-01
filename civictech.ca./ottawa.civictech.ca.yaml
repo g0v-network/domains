@@ -5,5 +5,4 @@ ottawa: &redirect
   - type: TXT
     value: 301 https://ottawacivictech.ca/
 
-yow:
-  <<: *redirect
+yow: *redirect

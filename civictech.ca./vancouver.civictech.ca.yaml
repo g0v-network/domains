@@ -5,5 +5,4 @@ vancouver: &redirect
   - type: TXT
     value: 301 https://www.meetup.com/Civic-Tech-Vancouver/
 
-yvr:
-  <<: *redirect
+yvr: *redirect

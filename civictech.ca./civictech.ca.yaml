@@ -60,5 +60,4 @@ www: &redirect
   - type: TXT
     value: 301 https://civictech.ca
 
-toronto:
-  <<: *redirect
+toronto: *redirect

@@ -5,5 +5,4 @@ edmonton: &redirect
   - type: TXT
     value: 301 https://betacity.ca/
 
-yeg:
-  <<: *redirect
+yeg: *redirect

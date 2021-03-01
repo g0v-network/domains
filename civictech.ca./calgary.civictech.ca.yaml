@@ -5,5 +5,4 @@ calgary: &redirect
   - type: TXT
     value: 301 https://www.meetup.com/CivicTechYYC-Tech-for-Good/
 
-yyc:
-  <<: *redirect
+yyc: *redirect

@@ -5,5 +5,4 @@ waterloo: &redirect
   - type: TXT
     value: 301 https://civictechwr.org/
 
-wr:
-  <<: *redirect
+wr: *redirect
