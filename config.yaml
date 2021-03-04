@@ -35,3 +35,8 @@ zones:
       - config-files
     targets:
       - cloudflare
+  g0teborg.se.:
+    sources:
+      - config-files
+    targets:
+      - cloudflare
