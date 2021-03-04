@@ -13,6 +13,10 @@ providers:
   cloudflare:
     class: octodns.provider.cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_API_TOKEN
+    # Importing a domain will often delete/update many, so better to have good experience.
+    # TODO: Revisit if any apps become high-stakes.
+    update_pcent_threshold: 0.95
+    delete_pcent_threshold: 0.95
 
 zones:
   g0v.network.:
