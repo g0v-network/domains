@@ -7,6 +7,7 @@ The following damains can be managed here:
 - `g0v.ca`
 - `c4nada.ca`
 - `t0ronto.ca`
+- `g0teborg.se`
 
 Changing or adding DNS records in `main` branch of this repository will update
 the actual domain records.
