@@ -66,7 +66,29 @@ index 3050a90..2a62d42 100644
 </details>
 
 <details>
-  <summary>Create <code>mysubdomain.g0v.ca</code> with redirect to <code>example.com</code></summary>
+  <summary>Create root domain redirect: <code>g0v.network</code> to <code>example.com</code></summary>
+
+```diff
+diff --git a/g0v.network./g0v.network.yaml b/g0v.network./g0v.network.yaml
+index aca1501..8049f5d 100644
+--- a/g0v.network./g0v.network.yaml
++++ b/g0v.network./g0v.network.yaml
+@@ -42,3 +42,9 @@
+         preference: 10
+       - exchange: mx2.forwardemail.net.
+         preference: 10
++  - type: TXT
++    values:
++      # Used for 301 redirect service below
++      - 301 https://example.com/
++  - type: ALIAS
++    value: 301.ronny.tw.
+```
+
+</details>
+
+<details>
+  <summary>Create subdomain redirect: <code>mysubdomain.g0v.ca</code> to <code>example.com</code></summary>
 
 ```diff
 diff --git a/config.yaml b/config.yaml
