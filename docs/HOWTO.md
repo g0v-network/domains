@@ -297,10 +297,11 @@ This is due to how all HTTPS security certificates work, and how this 301-servic
 But there's good news! If you'd like HTTPS redirects to also work,
 @ronnywang is [willing to add][] your redirect origin domain to his certificate.
 
-E.g., if you wished to redirect `sub.example.com` to g0v.tw,
+E.g., if you wished `https://sub.example.com` to cleanly redirect to http://g0v.tw,
 you would ask @ronnywang to **add `sub.example.com` to his certificate**.
+Even without submitting this additional request, `http://sub.example.com` would still redirect fine.
 
-**[Click here][https-request] to submit a request!**
+**[Click here][https-request] to submit a request.**
 
    [willing to add]: https://github.com/ronnywang/301-service/issues/2#issuecomment-791874487
    [https-request]: https://github.com/ronnywang/301-service/issues/new?title=Add%20SUB.EXAMPLE.COM%20as%20alt%20domain%20on%20HTTPS%20certificate&body=Re-ticketed%20from%20%5Bthese%20docs%5D(https%3A%2F%2Fgithub.com%2Fg0v-network%2Fdomains%2Fblob%2Fmain%2Fdocs%2FHOWTO.md%23redirects).%0A%0APlease%20add%20SUB.EXAMPLE.COM%20as%20a%20%22Subject%20Alternative%20Name%22%20to%20the%20301.ronny.tw%20HTTPS%20certificate.%20Thanks!
