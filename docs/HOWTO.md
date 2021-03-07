@@ -297,6 +297,9 @@ This is due to how all HTTPS security certificates work, and how this 301-servic
 But there's good news! If you'd like HTTPS redirects to also work,
 @ronnywang is [willing to add][] your redirect origin domain to his certificate.
 
+E.g., if you wished to redirect `sub.example.com` to g0v.tw,
+you would ask @ronnywang to **add `sub.example.com` to his certificate**.
+
 **[Click here][https-request] to submit a request!**
 
    [willing to add]: https://github.com/ronnywang/301-service/issues/2#issuecomment-791874487
