@@ -2,6 +2,12 @@
 
 This section is a work in progress.
 
+- [DNS Records](#dns-records)
+- [Subdomains](#subdomains)
+- [Email Forwarders](#email-forwarders)
+- [Domains](#domains)
+- [Redirects](#redirects)
+
 ## DNS Records
 
 Our setup on Cloudflare supports the follow record types: ([octoDNS docs][])
@@ -66,7 +72,7 @@ index 3050a90..2a62d42 100644
 </details>
 
 <details>
-  <summary>Create root domain redirect: <code>g0v.network</code> to <code>example.com</code></summary>
+  <summary>Create root domain <a href="#redirects">redirect</a>: <code>g0v.network</code> to <code>example.com</code></summary>
 
 ```diff
 diff --git a/g0v.network./g0v.network.yaml b/g0v.network./g0v.network.yaml
@@ -88,7 +94,7 @@ index aca1501..8049f5d 100644
 </details>
 
 <details>
-  <summary>Create subdomain redirect: <code>mysubdomain.g0v.ca</code> to <code>example.com</code></summary>
+  <summary>Create subdomain <a href="#redirects">redirect</a>: <code>mysubdomain.g0v.ca</code> to <code>example.com</code></summary>
 
 ```diff
 diff --git a/config.yaml b/config.yaml
@@ -259,3 +265,39 @@ index 0000000..acedadd
 ```
 
 </details>
+
+## Redirects
+
+This section describes how we support redirects, e.g. having `manifesto.g0v.ca` redirect to `https://g0v.tw/manifesto/en/`.
+
+Some DNS providers offer helpers to provide url redirects without hosting a special app.
+This is sometimes done through non-compliant pseudo-records ([like DNSimple does][redirect-dnsimple]),
+or through a separate platform feature ([like Cloudflare does][redirect-cloudflare]).
+
+   [redirect-dnsimple]: https://github.com/octodns/octodns/issues/505
+   [redirect-cloudflare]: https://support.cloudflare.com/hc/en-us/articles/200172286-Configuring-URL-forwarding-or-redirects-with-Cloudflare-Page-Rules
+
+To help allow redirects to be created in this repo in a consistent way,
+we instead opt to use a g0v-hosted tool called [`ronnywang/301-service`][301-service].
+It's hosted at [`301.ronny.tw`][301-ronny] ([translated into English][301-ronny-en]).
+
+   [301-service]: https://github.com/ronnywang/301-service
+   [301-ronny]: https://301.ronny.tw/
+   [301-ronny-en]: https://translate.google.com/translate?hl=&sl=auto&tl=en&u=https://301.ronny.tw
+
+For specific examples of how to add redirects, see [DNS Records](#dns-records) examples above.
+
+Once you've added a redirect like this, then the non-SSL link will work fine.
+
+E.g., http://g0v.ca can redirect to https://g0v.tw
+
+But note that HTTPS https://g0v.ca won't redirect cleanly without a browser warning.
+This is due to how all HTTPS security certificates work, and how this 301-service app works with these certificates.
+
+But there's good news! If you'd like HTTPS redirects to also work,
+@ronnywang is [willing to add][] your redirect origin domain to his certificate.
+
+**[Click here][https-request] to submit a request!**
+
+   [willing to add]: https://github.com/ronnywang/301-service/issues/2#issuecomment-791874487
+   [https-request]: https://github.com/ronnywang/301-service/issues/new?title=Add%20SUB.EXAMPLE.COM%20as%20alt%20domain%20on%20HTTPS%20certificate&body=Re-ticketed%20from%20%5Bthese%20docs%5D(https%3A%2F%2Fgithub.com%2Fg0v-network%2Fdomains%2Fblob%2Fmain%2Fdocs%2FHOWTO.md%23redirects).%0A%0APlease%20add%20SUB.EXAMPLE.COM%20as%20a%20%22Subject%20Alternative%20Name%22%20to%20the%20301.ronny.tw%20HTTPS%20certificate.%20Thanks!
