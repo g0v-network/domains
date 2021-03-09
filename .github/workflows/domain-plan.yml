@@ -1,7 +1,9 @@
 on:
   pull_request_target:
-    paths-ignore:
-      - '**.md'
+    paths:
+      - '*.domain/*.yaml'
+      - '.github/config-plan-amendment.yml'
+      - '.github/workflows/domain-plan.yml'
 
 defaults:
   run:
