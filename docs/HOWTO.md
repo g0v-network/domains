@@ -36,7 +36,7 @@ See the examples below to support in managing records.
   <summary>Adding an MX record to existing [sub]domain</summary>
 
 ```diff
-diff --git a/g0v.ca./g0v.ca.yaml b/g0v.ca./g0v.ca.yaml
+diff --git a/g0v.ca.domain/g0v.ca.yaml b/g0v.ca.domain/g0v.ca.yaml
 index 3050a90..474481e 100644
 --- a/g0v.ca./g0v.ca.yaml
 +++ b/g0v.ca./g0v.ca.yaml
@@ -56,7 +56,7 @@ index 3050a90..474481e 100644
   <summary>Add one more TXT record</summary>
 
 ```diff
-diff --git a/g0v.ca./g0v.ca.yaml b/g0v.ca./g0v.ca.yaml
+diff --git a/g0v.ca.domain/g0v.ca.yaml b/g0v.ca.domain/g0v.ca.yaml
 index 3050a90..2a62d42 100644
 --- a/g0v.ca./g0v.ca.yaml
 +++ b/g0v.ca./g0v.ca.yaml
@@ -75,7 +75,7 @@ index 3050a90..2a62d42 100644
   <summary>Create root domain <a href="#redirects">redirect</a>: <code>g0v.network</code> to <code>example.com</code></summary>
 
 ```diff
-diff --git a/g0v.network./g0v.network.yaml b/g0v.network./g0v.network.yaml
+diff --git a/g0v.network.domain/g0v.network.yaml b/g0v.network.domain/g0v.network.yaml
 index aca1501..8049f5d 100644
 --- a/g0v.network./g0v.network.yaml
 +++ b/g0v.network./g0v.network.yaml
@@ -110,7 +110,7 @@ index 3d10aed..4947530 100644
      sources:
        - config-files
      targets:
-diff --git a/g0v.ca./mysubdomain.g0v.ca.yaml b/g0v.ca./mysubdomain.g0v.ca.yaml
+diff --git a/g0v.ca.domain/mysubdomain.g0v.ca.yaml b/g0v.ca.domain/mysubdomain.g0v.ca.yaml
 new file mode 100644
 index 0000000..7536024
 --- /dev/null
@@ -133,7 +133,7 @@ index 0000000..7536024
   <summary>Create <code>mysubdomain.g0v.ca</code> and point to IP</summary>
 
 ```diff
-diff --git a/g0v.ca./mysubdomain.g0v.ca.yaml b/g0v.ca./mysubdomain.g0v.ca.yaml
+diff --git a/g0v.ca.domain/mysubdomain.g0v.ca.yaml b/g0v.ca.domain/mysubdomain.g0v.ca.yaml
 new file mode 100644
 index 0000000..d079979
 --- /dev/null
@@ -158,7 +158,7 @@ index 0000000..d079979
   <summary>Delete subdomain <code>oldapp.g0v.network</code></summary>
 
 ```diff
-diff --git a/g0v.network./oldapp.g0v.network.yaml b/g0v.network./oldapp.g0v.network.yaml
+diff --git a/g0v.network.domain/oldapp.g0v.network.yaml b/g0v.network.domain/oldapp.g0v.network.yaml
 deleted file mode 100644
 index ed900a2..0000000
 --- a/g0v.network./oldapp.g0v.network.yaml
@@ -250,11 +250,11 @@ index 3d10aed..c23c490 100644
 +      - config-files
 +    targets:
 +      - cloudflare
-diff --git a/example.com./example.com.yaml b/example.com./example.com.yaml
+diff --git a/example.com.domain/example.com.yaml b/example.com.domain/example.com.yaml
 new file mode 100644
 index 0000000..acedadd
 --- /dev/null
-+++ b/example.com./example.com.yaml
++++ b/example.com.domain/example.com.yaml
 @@ -0,0 +1,6 @@
 +---
 +'':
