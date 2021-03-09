@@ -7,6 +7,9 @@ providers:
     class: octodns.provider.yaml.SplitYamlProvider
     directory: .
     default_ttl: 120
+    # Suffix for each domain's dir (default: '.')
+    extension: .domain
+    # Allow record keys to be out of alphabetical order.
     enforce_order: false
     # Error when dups found
     populate_should_replace: false
