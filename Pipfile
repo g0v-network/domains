@@ -4,7 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-octodns = "*"
+# Using an unreleased feature to customize extension used for domain directory.
+# Will need this untile octdns > 0.9.11 is released.
+# See: https://github.com/g0v-network/domains/issues/20#issue-825088710
+octodns = { git = "https://github.com/octodns/octodns.git", ref = "master", editable = true }
 
 [dev-packages]
 
