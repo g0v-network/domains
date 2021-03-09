@@ -2,6 +2,9 @@
 
 For automating management of some g0v-related domains via config files.
 
+**Warning:** The continuous integration that runs the automation in the repo is **temporily broken**.
+I will resolve this soon. See [`issue #22`](https://github.com/g0v-network/domains/issues/22).
+
 The following damains can be managed here:
 - `g0v.network`
 - `g0v.ca`
