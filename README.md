@@ -41,12 +41,10 @@ Future intention is to adopt [g0v domain guidelines][guidelines-tw] ([English tr
 - [**YAML.**][yaml] A human-friendly configuration file format.
 - [**octoDNS.**][octodns] Command-line tool to update domain records from files -- infra-as-code!
 - [**GitHub Actions.**][gh-actions] Continuous integration platform to run automation in the cloud.
-  - [**octoDNS Sync action.**][octosync] Helps validate and run octoDNS.
 
    [yaml]: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
    [octodns]: https://github.com/octodns/octodns
    [gh-actions]: https://github.com/features/actions
-   [octosync]: https://github.com/solvaholic/octodns-sync
 
 ## :balloon: Usage
 

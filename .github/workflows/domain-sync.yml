@@ -21,8 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/setup-python@v2
+
+      - name: Install pipenv
+        run: pip install --user pipenv
+
+      - name: Install octoDNS
+        run: make setup
+
       - name: Publish
-        uses: solvaholic/octodns-sync@main
-        with:
-          config_path: config.yaml
-          doit: '--doit'
+        run: make run
