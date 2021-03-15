@@ -49,8 +49,7 @@ jobs:
         run: make setup
 
       - name: Generate plan
-        # Use tail to trim the first line of make, where command is printed.
-        run: make dry-run | tail -n +2 > octodns-sync.plan
+        run: make dry-run > octodns-sync.plan
 
       - name: Get plan output
         id: plan
