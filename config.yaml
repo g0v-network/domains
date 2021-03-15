@@ -23,6 +23,7 @@ providers:
 
 zones:
   g0v.network.:
+    lenient: true
     sources:
       - config-files
     targets:
