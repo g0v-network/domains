@@ -9,7 +9,7 @@ validate: ## Validate your configuration files
 	@echo Config files successfully validated!
 
 dry-run: ## Dry-run DNS record update (SAFE)
-	$(RUN) octodns-sync --config-file config.yaml
+	@$(RUN) octodns-sync --config-file config.yaml
 
 run: check ## Run DNS record update (!!!)
 	$(RUN) octodns-sync --config-file config.yaml --doit
