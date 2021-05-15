@@ -1,0 +1,9 @@
+link:
+  - type: A
+    octodns:
+      cloudflare:
+        proxied: true
+    value: 52.72.49.79
+    metdata:
+      description: Link shortener via Rebrandly
+      maintainer: patcon
