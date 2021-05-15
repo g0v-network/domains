@@ -25,6 +25,9 @@
       - forward-email=nyctraining:darshana@dznarayanan.com
       - forward-email=nyctraining:cs@compositescollective.com
       - forward-email=nyctraining:devinbalkind@gmail.com
+      
+      # platform.rebrandly@g0v.network
+      - forward-email=platform.rebrandly:patrick.c.connolly@gmail.com
   - type: A
     value: 162.247.75.222
     octodns:
