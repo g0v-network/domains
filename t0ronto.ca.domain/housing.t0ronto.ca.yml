@@ -1,0 +1,12 @@
+---
+# Prior subdomain for WIP website: https://mchc.jrootham.ca/
+housing:
+  - type: A
+    octodns:
+      cloudflare:
+        proxied: true
+    value: 199.103.63.49
+    metdata:
+      repository: null
+      maintainer:
+        - jrootham
