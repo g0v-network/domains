@@ -1,5 +1,5 @@
 ---
-'':
+mchc:
   - type: MX
     values:
       # Allow use of forwardemail.net
