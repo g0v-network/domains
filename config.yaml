@@ -48,3 +48,9 @@ zones:
       - config-files
     targets:
       - cloudflare
+  civictech.ca.:
+    lenient: true
+    sources:
+      - config-files
+    targets:
+      - cloudflare

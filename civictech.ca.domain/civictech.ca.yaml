@@ -1,0 +1,63 @@
+---
+'':
+  - type: TXT
+    values:
+      # Who has admin for this domain
+      - admin=civictechto
+
+      # Email forwarding via forwardemail.net
+      # See: MX record below
+
+      # hi@civictech.ca
+      - forward-email=hi:s2e1k1m0q5f0v3v6@civictechto.slack.com
+      - forward-email=hi:civictechtoronto@gmail.com
+
+      # speakers@civictech.ca
+      - forward-email=speakers:civictechto-speakers@googlegroups.com
+
+      # venues@civictech.ca
+      - forward-email=venues:civictechto-venues@googlegroups.com
+
+      # codeacross@civictech.ca
+      - forward-email=codeacross:codeacross-toronto@googlegroups.com
+
+      # eventscalendar@civictech.ca
+      - forward-email=eventscalendar:patrick.c.connolly@gmail.com
+
+      # saintjohn@civictech.ca
+      - forward-email=saintjohn:patrick.c.connolly@gmail.com
+
+      # organizers@civictech.ca
+      - forward-email=organizers:civictechto-organizers@googlegroups.com
+
+      # sponsorship@civictech.ca
+      - forward-email=sponsorship:gabe@pwd.ca
+
+      # toby@civictech.ca
+      - forward-email=toby:k2s3r7l0b4y6f2x7@civictechto.slack.com
+
+  - type: A
+    value: 143.95.38.159
+    metdata:
+      repository: none
+      maintainer:
+        - civictechto
+
+  - type: MX
+    values:
+      # Allow use of forwardemail.net
+      # See: https://forwardemail.net/en/faq#how-do-i-get-started-and-set-up-email-forwarding
+      - exchange: mx1.forwardemail.net.
+        preference: 10
+      - exchange: mx2.forwardemail.net.
+        preference: 10
+
+www: &redirect
+  - type: CNAME
+    value: 301.ronny.tw.
+    octodns:
+      lenient: true
+  - type: TXT
+    value: 301 https://civictech.ca
+
+toronto: *redirect

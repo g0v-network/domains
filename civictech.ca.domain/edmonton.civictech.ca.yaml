@@ -1,0 +1,8 @@
+---
+edmonton: &redirect
+  - type: CNAME
+    value: 301.ronny.tw.
+  - type: TXT
+    value: 301 https://betacity.ca/
+
+yeg: *redirect

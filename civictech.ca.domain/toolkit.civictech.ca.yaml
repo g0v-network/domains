@@ -1,0 +1,8 @@
+---
+toolkit:
+  type: CNAME
+  value: encircled-perch-g73rg7yj4r18vg7e6r1xux3z.herokudns.com.
+  metadata:
+    repository: https://github.com/CivicTechTO/civictechto-community-toolkit
+    maintainer:
+      - patcon

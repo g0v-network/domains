@@ -1,0 +1,9 @@
+---
+link:
+  - type: CNAME
+    value: rebrandlydomain.com.
+    metdata:
+      repository: https://github.com/civictechto/civictechto-scripts#gsheet2shortlinkspy
+      url: https://docs.google.com/spreadsheets/d/1LCVxEXuv70R-NozOwhNxZFtTZUmn1FLMPVD5wgIor9o/edit#gid=776462093
+      maintainer:
+        - patcon

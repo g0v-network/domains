@@ -1,0 +1,8 @@
+---
+slack:
+  type: CNAME
+  value: angular-temple-fx0lms4uzdcimvebrq3wtzg9.herokudns.com.
+  metadata:
+    repository: https://github.com/CivicTechTO/civictechto-slack-invite
+    maintainer:
+      - patcon

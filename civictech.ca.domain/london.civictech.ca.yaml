@@ -1,0 +1,6 @@
+---
+london:
+  - type: CNAME
+    value: 301.ronny.tw.
+  - type: TXT
+    value: 301 http://civictechlondon.ca/
