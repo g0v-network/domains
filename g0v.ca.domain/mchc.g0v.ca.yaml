@@ -18,4 +18,4 @@ mchc:
       # See: MX record above
 
       # platform.rebrandly@mchc.g0v.ca
-      - forward-email=platform.rebrandly:patrick.c.connolly@gmail.com
+      - forward-email=platform.rebrandly:patrick.c.connolly+mchc@gmail.com
