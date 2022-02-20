@@ -22,9 +22,12 @@ You'll mostly wish to use these common types:
 - `MX`: used to setting up email addresses
 - `TXT`: holds arbitrary text data
 
-Both `A` and `CNAME` records can be proxied with Cloudflare, if specified as below. ([Cloudflare docs][])
+Both `A` and `CNAME` records can be proxied with Cloudflare, if specified as below.
+This is most convenient for `domain.com` and `sub.domain.com`, but for second-level subdomains like `2nd.sub.domain.com`, you're likely to hit issues.
+([Cloudflare docs][]. [General docs][2nd-level-subdomain].)
 
    [Cloudflare docs]: https://support.cloudflare.com/hc/en-us/articles/200169626-What-subdomains-are-appropriate-for-orange-gray-clouds-
+   [2nd-level-subdomain]: https://serverfault.com/questions/104160/wildcard-ssl-certificate-for-second-level-subdomain
 
 See the examples below to support in managing records.
 
