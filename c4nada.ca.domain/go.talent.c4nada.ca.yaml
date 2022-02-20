@@ -1,0 +1,11 @@
+go.talent:
+  - type: A
+    octodns:
+      cloudflare:
+        # Beyond third-level, subdomains cannot be proxied to add SSL.
+        # See: https://community.cloudflare.com/t/redirect-third-level-domain/235899/2
+        proxied: false
+    value: 52.72.49.79
+    metdata:
+      description: Link shortener via Rebrandly
+      maintainer: patcon
