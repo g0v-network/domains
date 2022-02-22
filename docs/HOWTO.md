@@ -44,7 +44,7 @@ index 3050a90..474481e 100644
 --- a/g0v.ca./g0v.ca.yaml
 +++ b/g0v.ca./g0v.ca.yaml
 @@ -15,3 +15,7 @@
-       - 301 https://g0v.tw/
+       - 301 https://g0v.tw/intl/en/
    - type: ALIAS
      value: 301.ronny.tw.
 +  - type: MX
@@ -66,7 +66,7 @@ index 3050a90..2a62d42 100644
 @@ -6,6 +6,7 @@
        - admin=patcon
        # Used for 301 redirect service below
-       - 301 https://g0v.tw/
+       - 301 https://g0v.tw/intl/en/
 +      - google-site-verification=1234-abcd-5678-EFGH
    - type: ALIAS
      value: 301.ronny.tw.
@@ -271,7 +271,7 @@ index 0000000..acedadd
 
 ## Redirects
 
-This section describes how we support redirects, e.g. having `manifesto.g0v.ca` redirect to `https://g0v.tw/manifesto/en/`.
+This section describes how we support redirects, e.g. having `g0v.ca` redirect to `https://g0v.tw/intl/en/`.
 
 Some DNS providers offer helpers to provide url redirects without hosting a special app.
 This is sometimes done through non-compliant pseudo-records ([like DNSimple does][redirect-dnsimple]),
@@ -292,7 +292,7 @@ For specific examples of how to add redirects, see [DNS Records](#dns-records) e
 
 Once you've added a redirect like this, then the non-SSL link will work fine.
 
-E.g., http://g0v.ca can redirect to https://g0v.tw
+E.g., http://g0v.ca can redirect to https://g0v.tw/intl/en/
 
 But note that HTTPS https://g0v.ca won't redirect cleanly without a browser warning.
 This is due to how all HTTPS security certificates work, and how this 301-service app works with these certificates.
@@ -302,7 +302,7 @@ But there's good news! If you'd like HTTPS redirects to also work,
 
 E.g., if you wished `https://sub.example.com` to cleanly redirect to http://g0v.tw,
 you would ask @ronnywang to **add `sub.example.com` to his certificate**.
-Even without submitting this additional request, `http://sub.example.com` would still redirect fine.
+Even without submitting this additional request, `http://sub.example.com` (without SSL) would still redirect fine.
 
 **[Click here][https-request] to submit a request.**
 
