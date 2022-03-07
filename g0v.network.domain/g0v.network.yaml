@@ -19,6 +19,12 @@
       - forward-email=nobodies:cs@compositescollective.com
       - forward-email=nobodies:darshana.narayana@gmail.com
       
+      # ukraine.relief@g0v.network (and common typos, bc why not)
+      - forward-email=ukraine.relief:UkraineReliefDiscord@gmail.com
+      - forward-email=ukriane.relief:UkraineReliefDiscord@gmail.com
+      - forward-email=ukraine.releif:UkraineReliefDiscord@gmail.com
+      - forward-email=ukriane.releif:UkraineReliefDiscord@gmail.com
+      
       # nyctraining@g0v.network
       - forward-email=nyctraining:ebarry@gmail.com
       - forward-email=nyctraining:patrick.c.connolly@gmail.com
