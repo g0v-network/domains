@@ -45,7 +45,7 @@ Future intention is to adopt [g0v domain guidelines][guidelines-tw] ([English tr
 
 ## :balloon: Usage
 
-The intended way to use this repository is via pull request directly on GitHub.
+The intended way to use this repository is **directly via pull request** on GitHub.
 
 For support in **making common DNS changes** and adding new domains, see
 [`docs/HOWTO.md`](/docs/HOWTO.md).
