@@ -47,7 +47,7 @@ Future intention is to adopt [g0v domain guidelines][guidelines-tw] ([English tr
 
 The intended way to use this repository is via pull request directly on GitHub.
 
-For support in managing common DNS changes and adding new domains, see
+For support in **making common DNS changes** and adding new domains, see
 [`docs/HOWTO.md`](/docs/HOWTO.md).
 
 To learn to submit changes, see [Contributing][contrib]
