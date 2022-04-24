@@ -108,8 +108,6 @@ index 3d10aed..4947530 100644
      targets:
        - cloudflare
    g0v.ca.:
-+    # Allow TXT and CNAME to be created on same subdomain.
-+    lenient: true
      sources:
        - config-files
      targets:
@@ -125,8 +123,9 @@ index 0000000..7536024
 +    values:
 +      # Used for 301 redirect service below
 +      - 301 https://example.com/
-+  - type: CNAME
-+    value: 301.ronny.tw.
++  - type: A
++    # 301.ronny.tw
++    value: 52.69.187.52
 ```
 
 </details>

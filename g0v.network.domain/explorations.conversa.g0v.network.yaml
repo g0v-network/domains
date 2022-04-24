@@ -7,5 +7,6 @@ explorations.conversa:
         - ballpointpenguin
         - dsiddarth
         - patcon
-  - type: CNAME
-    value: 301.ronny.tw.
+  - type: A
+    # 301.ronny.tw
+    value: 52.69.187.52
