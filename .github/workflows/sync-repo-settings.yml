@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['.github/settings.yml']
+    paths: 
+    - .github/workflows/sync-repo-settings.yml
+    - .github/settings.yml
   schedule:
     # See: https://crontab.guru/#55_2_*_*_*
     - cron: '55 2 * * *'
