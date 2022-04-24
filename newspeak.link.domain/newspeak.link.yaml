@@ -1,0 +1,33 @@
+---
+'':
+  - type: A
+    ttl: 1
+    octodns:
+      cloudflare:
+        proxied: true
+    value: 52.72.49.79
+    metdata:
+      description: Link shortener via Rebrandly
+      maintainer: patcon
+  - type: TXT
+    ttl: 1
+    # For helping understanding this, see:
+    #   https://mxtoolbox.com/SPFRecordGenerator.aspx?domain=newspeak.link&prefill=true
+    value: v=spf1 -all
+_dmarc:
+  - type: TXT
+    ttl: 1
+    # For help understanding this, see:
+    #   https://mxtoolbox.com/DMARCRecordGenerator.aspx?domain=newspeak.link
+    # (Set #3 to "No" to avoid using MxToolbox offerings.)
+    value: v=DMARC1\; p=reject\; sp=reject\; pct=100\; adkim=s\; aspf=s
+www:
+  - type: CNAME
+    ttl: 1
+    octodns:
+      cloudflare:
+        proxied: true
+    value: rebrandlydomain.com.
+    metdata:
+      description: Link shortener via Rebrandly
+      maintainer: clementbriens
