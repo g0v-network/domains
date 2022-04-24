@@ -6,9 +6,9 @@
       cloudflare:
         proxied: true
     value: 52.72.49.79
-    metdata:
+    metadata:
       description: Link shortener via Rebrandly
-      maintainer: patcon
+      maintainer: clementbriens
   - type: TXT
     ttl: 1
     # For helping understanding this, see:
@@ -28,6 +28,3 @@ www:
       cloudflare:
         proxied: true
     value: rebrandlydomain.com.
-    metdata:
-      description: Link shortener via Rebrandly
-      maintainer: clementbriens
