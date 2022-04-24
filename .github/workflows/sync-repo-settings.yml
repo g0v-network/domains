@@ -1,0 +1,29 @@
+name: Sync Repo Settings
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/settings.yml']
+  schedule:
+    # See: https://crontab.guru/#55_2_*_*_*
+    - cron: '55 2 * * *'
+
+jobs:
+  sync-repo-settings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate ephemeral GH App Token
+        id: workflow-token
+        uses: peter-murray/workflow-application-token-action@v1
+        with:
+          # See: https://github.com/apps/repo-settings-sync-g0v-network
+          application_id: 194297
+          application_private_key: ${{ secrets.APPLICATION_CLIENT_SECRET }}
+        
+      - uses: actions/checkout@v2
+
+      - uses: exivity/actions/sync-defaults@main
+        with:
+          gh-token: ${{ steps.workflow-token.outputs.token }}
