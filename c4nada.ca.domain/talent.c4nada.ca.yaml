@@ -22,3 +22,6 @@ talent:
  
       # platform.easyretro@talent.c4nada.ca
       - forward-email=platform.easyretro:patrick.c.connolly+talent@gmail.com
+
+      # platform.moodlight@talent.c4nada.ca
+      - forward-email=platform.moodlight:patrick.c.connolly+talent@gmail.com
