@@ -25,3 +25,8 @@ talent:
 
       # platform.moodlight@talent.c4nada.ca
       - forward-email=platform.moodlight:patrick.c.connolly+talent@gmail.com
+
+      # A helper for forwarding content to #clipboard channel of team slack.
+      # Channel (non-public): https://app.slack.com/client/T5ZFRSQ3V/C03EQG10T6W
+      # slack.clipboard@talent.c4nada.ca
+      - forward-email=slack.clipboard:clipboard-aaaaglyixywkesodj3t3pau774@talent-cloud.slack.com
