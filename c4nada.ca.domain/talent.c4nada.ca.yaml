@@ -30,3 +30,15 @@ talent:
       # Channel (non-public): https://app.slack.com/client/T5ZFRSQ3V/C03EQG10T6W
       # slack.clipboard@talent.c4nada.ca
       - forward-email=slack.clipboard:clipboard-aaaaglyixywkesodj3t3pau774@talent-cloud.slack.com
+
+      # Some custom email forwarders for patcon.
+      # patcon.slack@talent.c4nada.ca
+      - forward-email=patcon.slack:email-patcon-aaaaglyln5aqfo5xdcxvxuqlai@talent-cloud.slack.com
+      # patcon.tbs@talent.c4nada.ca
+      - forward-email=patcon.tbs:patrick.connolly@tbs-sct.gc.ca
+      # patcon.personal@talent.c4nada.ca
+      - forward-email=patcon.personal:patrick.c.connolly@gmail.com
+      # patcon@talent.c4nada.ca => all 3
+      - forward-email=patcon:patcon.slack@talent.c4nada.ca
+      - forward-email=patcon:patcon.tbs@talent.c4nada.ca
+      - forward-email=patcon:patcon.personal@talent.c4nada.ca
