@@ -48,7 +48,7 @@ talent:
       # tristan.tbs@talent.c4nada.ca
       - forward-email=tristan.tbs:trorourk@tbs-sct.gc.ca
       # tristan.personal@talent.c4nada.ca
-      - forward-email=tristan.personal:tristan.orourke@gmail.comm
+      - forward-email=tristan.personal:tristan.orourke@gmail.com
       # tristan@talent.c4nada.ca => all 3
       - forward-email=tristan:tristan.slack@talent.c4nada.ca
       - forward-email=tristan:tristan.tbs@talent.c4nada.ca
