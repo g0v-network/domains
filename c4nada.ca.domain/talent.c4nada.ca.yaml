@@ -16,28 +16,32 @@ talent:
 
       # Email forwarding via forwardemail.net
       # See: MX record above
+      
+      # all@talent.c4nada.ca
+      - forward-email=all:tristan@talent.c4nada.ca
+      - forward-email=all:patcon@talent.c4nada.ca
 
       # platform.rebrandly@talent.c4nada.ca
-      - forward-email=platform.rebrandly:patrick.c.connolly+talent@gmail.com
+      - forward-email=platform.rebrandly:all@talent.c4nada.ca
  
       # platform.easyretro@talent.c4nada.ca
-      - forward-email=platform.easyretro:patrick.c.connolly+talent@gmail.com
+      - forward-email=platform.easyretro:all@talent.c4nada.ca
 
       # platform.moodlight@talent.c4nada.ca
-      - forward-email=platform.moodlight:patrick.c.connolly+talent@gmail.com
+      - forward-email=platform.moodlight:all@talent.c4nada.ca
 
       # A helper for forwarding content to #clipboard channel of team slack.
       # Channel (non-public): https://app.slack.com/client/T5ZFRSQ3V/C03EQG10T6W
       # slack.clipboard@talent.c4nada.ca
       - forward-email=slack.clipboard:clipboard-aaaaglyixywkesodj3t3pau774@talent-cloud.slack.com
 
-      # Some custom email forwarders for patcon.
+      # Some custom email forwarders for individuals.
       # patcon.slack@talent.c4nada.ca
       - forward-email=patcon.slack:email-patcon-aaaaglyln5aqfo5xdcxvxuqlai@talent-cloud.slack.com
       # patcon.tbs@talent.c4nada.ca
       - forward-email=patcon.tbs:patrick.connolly@tbs-sct.gc.ca
       # patcon.personal@talent.c4nada.ca
-      - forward-email=patcon.personal:patrick.c.connolly@gmail.com
+      - forward-email=patcon.personal:patrick.c.connolly+talent@gmail.com
       # patcon@talent.c4nada.ca => all 3
       - forward-email=patcon:patcon.slack@talent.c4nada.ca
       - forward-email=patcon:patcon.tbs@talent.c4nada.ca
