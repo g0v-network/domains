@@ -5,6 +5,7 @@ For automating management of some g0v-related domains via config files.
 The following damains can be managed here:
 - `g0v.network`
 - `g0v.ca`
+- `g0v.london`
 - `c4nada.ca`
 - `t0ronto.ca`
 - `g0teborg.se`
