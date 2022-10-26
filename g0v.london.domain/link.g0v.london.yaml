@@ -1,0 +1,6 @@
+link:
+  - type: CNAME
+    value: cname.short.io
+    metdata:
+      description: Link shortener via Short.io
+      maintainer: patcon
