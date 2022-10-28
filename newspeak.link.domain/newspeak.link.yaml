@@ -1,0 +1,10 @@
+---
+'':
+  - type: TXT
+    values:
+      # Who has admin for this domain
+      - admin=patcon
+      # Used for 301 redirect service below
+      - 301 http://newspeak.house
+  - type: ALIAS
+    value: 301.ronny.tw.
