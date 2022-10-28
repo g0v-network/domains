@@ -9,6 +9,7 @@ The following damains can be managed here:
 - `c4nada.ca`
 - `t0ronto.ca`
 - `g0teborg.se`
+- `newspeak.link`
 
 Changing or adding DNS records in `main` branch of this repository will update
 the actual domain records.
