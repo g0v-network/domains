@@ -29,15 +29,6 @@
       # TODO: Set up a Google Group and migrate user management there instead.
       # - forward-email=speakers:g0v-london-organizing@googlegroups.com
 
-  - type: A
-    value: 162.247.75.222
-    octodns:
-      cloudflare:
-        proxied: true
-    metdata:
-      repository: https://github.com/g0v-network/g0v.network
-      maintainer:
-        - patcon
   - type: MX
     values:
       # Allow use of forwardemail.net
