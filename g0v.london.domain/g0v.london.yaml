@@ -1,10 +1,39 @@
 ---
 '':
+  # set up 301 redirect service
+  - type: ALIAS
+    value: 301.ronny.tw.
+
   - type: TXT
     values:
       # Who has admin for this domain
       - admin=patcon
-      # Used for 301 redirect service below
+
+      # Used for 301 redirect service above
       - 301 http://www.meetup.com/g0v-london
-  - type: ALIAS
-    value: 301.ronny.tw.
+
+      # Email forwarding via forwardemail.net
+      # See: MX record below
+
+      # speakers@g0v.london
+      - forward-email=speakers:aelcenganda@gmail.com
+      - forward-email=speakers:patrick.c.connolly@gmail.com
+      - forward-email=speakers:ruth.wetters@yahoo.co.uk
+      # TODO: Set up a Google Group and migrate user management there instead.
+      # - forward-email=speakers:g0v-london-speaker-booking@googlegroups.com
+
+      # hi@g0v.london
+      - forward-email=hi:aelcenganda@gmail.com
+      - forward-email=hi:patrick.c.connolly@gmail.com
+      - forward-email=hi:ruth.wetters@yahoo.co.uk
+      # TODO: Set up a Google Group and migrate user management there instead.
+      # - forward-email=hi:g0v-london-organizing@googlegroups.com
+
+  - type: MX
+    values:
+      # Allow use of forwardemail.net
+      # See: https://forwardemail.net/en/faq#how-do-i-get-started-and-set-up-email-forwarding
+      - exchange: mx1.forwardemail.net.
+        preference: 10
+      - exchange: mx2.forwardemail.net.
+        preference: 10
