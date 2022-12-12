@@ -19,8 +19,8 @@
       - forward-email=speakers:aelcenganda@gmail.com
       - forward-email=speakers:patrick.c.connolly@gmail.com
       - forward-email=speakers:ruth.wetters@yahoo.co.uk
-      # TODO: Set up a Google Group and migrate user management there instead.
-      # - forward-email=speakers:g0v-london-speaker-booking@googlegroups.com
+      # TODO: Remove direct emails (above) once Google Group migration is confirmed.
+      - forward-email=speakers:g0v-london-speakers@googlegroups.com
 
       # hi@g0v.london
       - forward-email=hi:aelcenganda@gmail.com
