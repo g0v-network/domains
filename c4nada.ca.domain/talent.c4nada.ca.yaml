@@ -57,3 +57,14 @@ talent:
       - forward-email=tristan:tristan.slack@talent.c4nada.ca
       - forward-email=tristan:tristan.tbs@talent.c4nada.ca
       - forward-email=tristan:tristan.personal@talent.c4nada.ca
+demo.translate.talent:
+  - type: A
+    octodns:
+      cloudflare:
+        # Beyond third-level, subdomains cannot be proxied to add SSL.
+        # See: https://community.cloudflare.com/t/redirect-third-level-domain/235899/2
+        proxied: false
+    value: 147.182.144.248
+    metdata:
+      description: Demo of the Weblate translation management server
+      maintainer: patcon
