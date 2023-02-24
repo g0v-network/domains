@@ -1,16 +1,15 @@
 ---
-'':
-  # set up 301 redirect service
-  - type: ALIAS
-    value: 301.ronny.tw.
+'':    
+  - type: URLFWD
+    values:
+    - path: g0v.london/
+      target: https://www.meetup.com/g0v-london
+      code: 302
 
   - type: TXT
     values:
       # Who has admin for this domain
       - admin=patcon
-
-      # Used for 301 redirect service above
-      - 301 http://www.meetup.com/g0v-london
 
       # Email forwarding via forwardemail.net
       # See: MX record below
