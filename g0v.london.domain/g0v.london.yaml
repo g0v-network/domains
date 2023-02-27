@@ -18,6 +18,10 @@
       # speakers@g0v.london
       # See: https://docs.google.com/document/d/1R9PhNE3yJJgM7xlIU3ji1LyWsXzFd4GQ5euS093ptmA/edit#bookmark=kix.vnc7fne25lf4
       - forward-email=speakers:g0v-london-speakers@googlegroups.com
+      
+      # venues@g0v.london
+      # See: https://docs.google.com/document/d/1R9PhNE3yJJgM7xlIU3ji1LyWsXzFd4GQ5euS093ptmA/edit#bookmark=kix.vnc7fne25lf4
+      - forward-email=venues:g0v-london-venues@googlegroups.com
 
       # hi@g0v.london
       - forward-email=hi:aelcenganda@gmail.com
