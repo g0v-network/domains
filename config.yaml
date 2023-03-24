@@ -48,6 +48,7 @@ zones:
     targets:
       - cloudflare
   g0v.london.:
+    lenient: true
     sources:
       - config-files
     targets:
