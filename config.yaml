@@ -14,7 +14,7 @@ providers:
     # Error when dups found
     populate_should_replace: false
   cloudflare:
-    class: octodns.provider.cloudflare.CloudflareProvider
+    class: octodns_cloudflare.CloudflareProvider
     token: env/CLOUDFLARE_API_TOKEN
     # Importing a domain will often delete/update many, so better to have good experience.
     # TODO: Revisit if any apps become high-stakes.
