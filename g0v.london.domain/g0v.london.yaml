@@ -1,10 +1,19 @@
 ---
 '':    
+  - type: A
+    value: 192.0.2.1
+    octodns:
+      # In order for URLFWD pseudo-record to work via Cloudflare's Page Rule
+      # mechanism, the DNS must be proxied to a no-op IP address.
+      # See: https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-#:~:text=Page%20Rules%20require%20a%20%22proxied%22%20DNS%20record cloudflare:
+      proxied: true
   - type: URLFWD
     values:
-    - path: g0v.london/
-      target: https://www.meetup.com/g0v-london
+    - path: /*
+      target: https://www.meetup.com/g0v-london/
       code: 302
+      masking: 2
+      query: 0
 
   - type: TXT
     values:
