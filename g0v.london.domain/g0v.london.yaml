@@ -1,16 +1,24 @@
 ---
-'':
-  # set up 301 redirect service
-  - type: ALIAS
-    value: 301.ronny.tw.
+'':    
+  - type: A
+    value: 192.0.2.1
+    octodns:
+      # In order for URLFWD pseudo-record to work via Cloudflare's Page Rule
+      # mechanism, the DNS must be proxied to a no-op IP address.
+      # See: https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-#:~:text=Page%20Rules%20require%20a%20%22proxied%22%20DNS%20record cloudflare:
+      proxied: true
+  - type: URLFWD
+    values:
+    - path: /*
+      target: https://www.meetup.com/g0v-london/
+      code: 302
+      masking: 2
+      query: 0
 
   - type: TXT
     values:
       # Who has admin for this domain
       - admin=patcon
-
-      # Used for 301 redirect service above
-      - 301 http://www.meetup.com/g0v-london
 
       # Email forwarding via forwardemail.net
       # See: MX record below
