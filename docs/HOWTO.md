@@ -41,8 +41,8 @@ See the examples below to support in managing records.
 ```diff
 diff --git a/g0v.ca.domain/g0v.ca.yaml b/g0v.ca.domain/g0v.ca.yaml
 index 3050a90..474481e 100644
---- a/g0v.ca./g0v.ca.yaml
-+++ b/g0v.ca./g0v.ca.yaml
+--- a/g0v.ca.domain/g0v.ca.yaml
++++ b/g0v.ca.domain/g0v.ca.yaml
 @@ -15,3 +15,7 @@
        - 301 https://g0v.tw/intl/en/
    - type: ALIAS
@@ -61,8 +61,8 @@ index 3050a90..474481e 100644
 ```diff
 diff --git a/g0v.ca.domain/g0v.ca.yaml b/g0v.ca.domain/g0v.ca.yaml
 index 3050a90..2a62d42 100644
---- a/g0v.ca./g0v.ca.yaml
-+++ b/g0v.ca./g0v.ca.yaml
+--- a/g0v.ca.domain/g0v.ca.yaml
++++ b/g0v.ca.domain/g0v.ca.yaml
 @@ -6,6 +6,7 @@
        - admin=patcon
        # Used for 301 redirect service below
@@ -75,63 +75,6 @@ index 3050a90..2a62d42 100644
 </details>
 
 <details>
-  <summary>Create root domain <a href="#redirects">redirect</a>: <code>g0v.network</code> to <code>example.com</code></summary>
-
-```diff
-diff --git a/g0v.network.domain/g0v.network.yaml b/g0v.network.domain/g0v.network.yaml
-index aca1501..8049f5d 100644
---- a/g0v.network./g0v.network.yaml
-+++ b/g0v.network./g0v.network.yaml
-@@ -42,3 +42,9 @@
-         preference: 10
-       - exchange: mx2.forwardemail.net.
-         preference: 10
-+  - type: TXT
-+    values:
-+      # Used for 301 redirect service below
-+      - 301 https://example.com/
-+  - type: ALIAS
-+    value: 301.ronny.tw.
-```
-
-</details>
-
-<details>
-  <summary>Create subdomain <a href="#redirects">redirect</a>: <code>mysubdomain.g0v.ca</code> to <code>example.com</code></summary>
-
-```diff
-diff --git a/config.yaml b/config.yaml
-index 3d10aed..4947530 100644
---- a/config.yaml
-+++ b/config.yaml
-@@ -21,6 +21,8 @@ zones:
-     targets:
-       - cloudflare
-   g0v.ca.:
-     sources:
-       - config-files
-     targets:
-diff --git a/g0v.ca.domain/mysubdomain.g0v.ca.yaml b/g0v.ca.domain/mysubdomain.g0v.ca.yaml
-new file mode 100644
-index 0000000..7536024
---- /dev/null
-+++ b/g0v.ca./mysubdomain.g0v.ca.yaml
-@@ -0,0 +1,8 @@
-+---
-+mysubdomain:
-+  - type: TXT
-+    values:
-+      # Used for 301 redirect service below
-+      - 301 https://example.com/
-+  - type: A
-+    # 301.ronny.tw
-+    value: 52.69.187.52
-```
-
-</details>
-
-
-<details>
   <summary>Create <code>mysubdomain.g0v.ca</code> and point to IP</summary>
 
 ```diff
@@ -139,7 +82,7 @@ diff --git a/g0v.ca.domain/mysubdomain.g0v.ca.yaml b/g0v.ca.domain/mysubdomain.g
 new file mode 100644
 index 0000000..d079979
 --- /dev/null
-+++ b/g0v.ca./mysubdomain.g0v.ca.yaml
++++ b/g0v.ca.domain/mysubdomain.g0v.ca.yaml
 @@ -0,0 +1,11 @@
 +---
 +mysubdomain:
@@ -163,7 +106,7 @@ index 0000000..d079979
 diff --git a/g0v.network.domain/oldapp.g0v.network.yaml b/g0v.network.domain/oldapp.g0v.network.yaml
 deleted file mode 100644
 index ed900a2..0000000
---- a/g0v.network./oldapp.g0v.network.yaml
+--- a/g0v.network.domain/oldapp.g0v.network.yaml
 +++ /dev/null
 @@ -1,11 +0,0 @@
 ----
@@ -236,7 +179,7 @@ index b079994..8266139 100644
  - `c4nada.ca`
  - `t0ronto.ca`
 +- `example.com`
- 
+
  Changing or adding DNS records in `main` branch of this repository will update
  the actual domain records.
 diff --git a/config.yaml b/config.yaml
@@ -272,12 +215,68 @@ index 0000000..acedadd
 
 This section describes how we support redirects, e.g. having `g0v.ca` redirect to `https://g0v.tw/intl/en/`.
 
+### Recommended Approach: Cloudflare URLFWD record type
+
 Some DNS providers offer helpers to provide url redirects without hosting a special app.
 This is sometimes done through non-compliant pseudo-records ([like DNSimple does][redirect-dnsimple]),
-or through a separate platform feature ([like Cloudflare does][redirect-cloudflare]).
+or through a separate platform feature ([like Cloudflare does with Page Rules][redirect-cloudflare]).
 
    [redirect-dnsimple]: https://github.com/octodns/octodns/issues/505
    [redirect-cloudflare]: https://support.cloudflare.com/hc/en-us/articles/200172286-Configuring-URL-forwarding-or-redirects-with-Cloudflare-Page-Rules
+
+Our tool OctoDNS is using the Cloudflare provider.
+This provider supports a pseudo-record type called `URLFWD`,
+which is used to configure Page Rules.
+This is currently the best way to set up forwarding in this repo.
+
+#### Examples
+
+<details>
+  <summary>Create a redirect: <code>g0v.london</code> to <code>example.com</code></summary>
+
+Note: This only works when using the Cloudflare provider.
+
+It will redirect any path on the g0v.london top-level domain directly to https://example.com :
+- http://g0v.london -> https://example.com
+- https://g0v.london -> https://example.com
+- https://g0v.london/foo?bar=baz -> https://example.com
+
+```diff
+diff --git a/g0v.london.domain/g0v.london.yaml b/g0v.london.domain/g0v.london.yaml
+index 09f6e1e..c4be0bf 100644
+--- a/g0v.london.domain/g0v.london.yaml
++++ b/g0v.london.domain/g0v.london.yaml
+@@ -1,5 +1,21 @@
+ ---
+ '':
++  # In order for URLFWD pseudo-record to work via Cloudflare's Page Rule
++  # mechanism, the DNS must be proxied to a no-op IP address.
++  # See: https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-
++  - type: A
++    value: 192.0.2.1 # no-op record to allow Cloudflare to proxy
++    octodns:
++      cloudflare:
++        proxied: true
++  # Create the catch-all Page Rule
++  - type: URLFWD
++    values:
++    - path: /*   # match every path
++      target: https://example.com/
++      code: 302  # permanent 301 or temporary 302
++      masking: 2 # always same
++      query: 0   # always same
+   - type: TXT
+     values:
+       # Who has admin for this domain
+```
+
+</details>
+
+### Legacy Approach: 301.ronny.tw
+
+**Note:** This is NOT LONGER THE RECOMMENDED approach,
+as it's finicky when the redirect origin has SSL,
+which is very common now.
 
 To help allow redirects to be created in this repo in a consistent way,
 we instead opt to use a g0v-hosted tool called [`ronnywang/301-service`][301-service].
@@ -289,11 +288,58 @@ It's hosted at [`301.ronny.tw`][301-ronny] ([translated into English][301-ronny-
 
 For specific examples of how to add redirects, see [DNS Records](#dns-records) examples above.
 
+#### Examples
+
+<details>
+  <summary>Create root domain redirect: <code>g0v.network</code> to <code>example.com</code></summary>
+
+```diff
+diff --git a/g0v.network.domain/g0v.network.yaml b/g0v.network.domain/g0v.network.yaml
+index aca1501..8049f5d 100644
+--- a/g0v.network.domain/g0v.network.yaml
++++ b/g0v.network.domain/g0v.network.yaml
+@@ -42,3 +42,9 @@
+         preference: 10
+       - exchange: mx2.forwardemail.net.
+         preference: 10
++  - type: TXT
++    values:
++      # Used for 301 redirect service below
++      - 301 https://example.com/
++  - type: ALIAS
++    value: 301.ronny.tw.
+```
+
+</details>
+
+<details>
+  <summary>Create subdomain redirect: <code>mysubdomain.g0v.ca</code> to <code>example.com</code></summary>
+
+```diff
+diff --git a/g0v.ca.domain/mysubdomain.g0v.ca.yaml b/g0v.ca.domain/mysubdomain.g0v.ca.yaml
+new file mode 100644
+index 0000000..7536024
+--- /dev/null
++++ b/g0v.ca.domain/mysubdomain.g0v.ca.yaml
+@@ -0,0 +1,8 @@
++---
++mysubdomain:
++  - type: TXT
++    values:
++      # Used for 301 redirect service below
++      - 301 https://example.com/
++  - type: A
++    # 301.ronny.tw
++    value: 52.69.187.52
+```
+
+</details>
+
 Once you've added a redirect like this, then the non-SSL link will work fine.
 
-E.g., http://g0v.ca can redirect to https://g0v.tw/intl/en/
+E.g., Non-SSL http://g0v.ca can redirect to https://g0v.tw/intl/en/
 
-But note that HTTPS https://g0v.ca won't redirect cleanly without a browser warning.
+But note that HTTPS https://g0v.ca (with SSL) won't redirect cleanly without a browser warning.
 This is due to how all HTTPS security certificates work, and how this 301-service app works with these certificates.
 
 But there's good news! If you'd like HTTPS redirects to also work,
