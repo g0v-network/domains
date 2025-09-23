@@ -14,7 +14,7 @@ env:
 
 jobs:
   test-and-comment:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout default branch
         uses: actions/checkout@v2
