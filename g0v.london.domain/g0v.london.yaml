@@ -11,7 +11,7 @@
   - type: URLFWD
     values:
     - path: /*
-      target: https://www.meetup.com/g0v-london/
+      target: https://www.meetup.com/hacklondon/
       code: 302
       masking: 2
       query: 0
