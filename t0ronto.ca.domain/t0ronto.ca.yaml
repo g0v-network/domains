@@ -1,10 +1,16 @@
 ---
 '':
+  - type: A
+    values:
+      - 185.199.108.153
+      - 185.199.109.153
+      - 185.199.110.153
+      - 185.199.111.153
   - type: TXT
     values:
       # Who has admin for this domain
       - admin=patcon
-      # Used for 301 redirect service below
-      - 301 https://g0v.tw/intl/en/
-  - type: ALIAS
-    value: 301.ronny.tw.
+      # Used for a https://github.com/CivicTechTO/ repository custom domain for community based open data collaboration
+'www':
+  - type: CNAME
+    value: civictechto.github.io.
