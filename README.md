@@ -8,7 +8,6 @@ The following damains can be managed here:
 - `g0v.london`
 - `c4nada.ca`
 - `t0ronto.ca`
-- `g0teborg.se`
 - `newspeak.link`
 
 Changing or adding DNS records in `main` branch of this repository will update
