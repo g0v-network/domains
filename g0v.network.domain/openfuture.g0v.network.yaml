@@ -1,0 +1,6 @@
+openfuture:
+  - type: CNAME
+    value: astro-test-polis.netlify.app.
+    metdata:
+      description: Staging website for OpenFuture_ Polis website
+      maintainer: patcon
