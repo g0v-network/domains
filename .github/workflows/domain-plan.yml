@@ -28,8 +28,29 @@ jobs:
           git fetch origin refs/pull/${{ github.event.pull_request.number }}/head
           # List changed config files in PR head
           _files="$(git diff --name-only HEAD $_sha | grep "\.yaml$")"
-          # Checkout config files from PR head commit
-          if [ -n "$_files" ]; then git checkout "$_sha" -- $_files; fi
+          # Separate added/modified files from deleted files
+          _existing_files=""
+          _deleted_files=""
+          for file in $_files; do
+            if git cat-file -e "$_sha:$file" 2>/dev/null; then
+              _existing_files="$_existing_files $file"
+            else
+              _deleted_files="$_deleted_files $file"
+            fi
+          done
+          # Checkout only existing config files from PR head commit
+          if [ -n "$_existing_files" ]; then
+            git checkout "$_sha" -- $_existing_files
+          fi
+          # Remove deleted files from working directory if they exist
+          if [ -n "$_deleted_files" ]; then
+            for file in $_deleted_files; do
+              if [ -f "$file" ]; then
+                echo "Removing deleted file: $file"
+                rm "$file"
+              fi
+            done
+          fi
           # Set output 'sha' to $_sha
           echo "::set-output name=sha::${_sha}"
 
