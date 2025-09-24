@@ -17,3 +17,6 @@
 'www':
   - type: CNAME
     value: civictechto.github.io.
+    metdata:
+      description: GitHub page config.
+      maintainer: jordyarms
