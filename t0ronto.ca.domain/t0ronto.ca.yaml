@@ -6,6 +6,9 @@
       - 185.199.109.153
       - 185.199.110.153
       - 185.199.111.153
+    metdata:
+      description: GitHub page config.
+      maintainer: jordyarms
   - type: TXT
     values:
       # Who has admin for this domain
