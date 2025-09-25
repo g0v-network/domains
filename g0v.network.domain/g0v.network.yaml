@@ -1,5 +1,5 @@
 ---
-'':
+"":
   - type: TXT
     values:
       # Who has admin for this domain
@@ -18,7 +18,7 @@
       - forward-email=nobodies:darshana@dznarayanan.com
       - forward-email=nobodies:cs@compositescollective.com
       - forward-email=nobodies:darshana.narayana@gmail.com
-      
+
       # nyctraining@g0v.network
       - forward-email=nyctraining:ebarry@gmail.com
       - forward-email=nyctraining:patrick.c.connolly@gmail.com

@@ -6,11 +6,12 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/domain-sync.yml'
-      - '.github/settings.yml'
+      - ".github/workflows/domain-sync.yml"
+      - ".github/settings.yml"
       # Only domain folders ending in dots.
-      - '*.domain/*.yaml'
-      - 'config.yaml'
+      - "*.domain/*.yaml"
+      - "config.yaml"
+      - "Pipfile*"
 
 env:
   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -20,11 +21,11 @@ jobs:
     name: Publish DNS config from main
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.8'
+          python-version: "3.8"
 
       - name: Install pipenv
         run: |
