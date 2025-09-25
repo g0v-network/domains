@@ -23,61 +23,8 @@ jobs:
       - name: Checkout config files from PR
         id: prhead
         run: |
-          set -euo pipefail
-
-          # Set $_sha to the first 7 char of PR head SHA
-          _sha="$(echo "${{ github.event.pull_request.head.sha }}" | cut -c 1-7)"
-          echo "Processing PR head commit: $_sha"
-
-          # Fetch PR head commit
-          git fetch origin refs/pull/${{ github.event.pull_request.number }}/head
-
-          # List changed config files in PR head (handle case where no YAML files exist)
-          _files="$(git diff --name-only HEAD $_sha | grep "\.yaml$" || true)"
-
-          if [ -z "$_files" ]; then
-            echo "No YAML files changed in this PR"
-            echo "::set-output name=sha::${_sha}"
-            exit 0
-          fi
-
-          echo "Changed YAML files: $_files"
-
-          # Separate added/modified files from deleted files
-          _existing_files=""
-          _deleted_files=""
-          for file in $_files; do
-            # Security: Only allow files matching expected patterns
-            if [[ ! "$file" =~ ^[a-zA-Z0-9._-]+\.domain/[a-zA-Z0-9._-]+\.yaml$ ]] && [[ "$file" != ".github/config-plan-amendment.yml" ]]; then
-              echo "Warning: Skipping file with unexpected pattern: $file"
-              continue
-            fi
-
-            if git cat-file -e "$_sha:$file" 2>/dev/null; then
-              _existing_files="$_existing_files $file"
-            else
-              _deleted_files="$_deleted_files $file"
-            fi
-          done
-
-          # Checkout only existing config files from PR head commit
-          if [ -n "$_existing_files" ]; then
-            echo "Checking out files: $_existing_files"
-            git checkout "$_sha" -- $_existing_files
-          fi
-
-          # Remove deleted files from working directory if they exist
-          if [ -n "$_deleted_files" ]; then
-            for file in $_deleted_files; do
-              if [ -f "$file" ]; then
-                echo "Removing deleted file: $file"
-                rm "$file"
-              fi
-            done
-          fi
-
-          # Set output 'sha' to $_sha
-          echo "::set-output name=sha::${_sha}"
+          chmod +x scripts/checkout-pr-config-files.sh
+          scripts/checkout-pr-config-files.sh "${{ github.event.pull_request.head.sha }}" "${{ github.event.pull_request.number }}"
 
       - name: Force HTML plan output
         run: cat .github/config-plan-amendment.yml >> config.yaml
@@ -100,13 +47,8 @@ jobs:
       - name: Get plan output
         id: plan
         run: |
-          # Parse plan output into $_plan
-          _plan="$(cat ${GITHUB_WORKSPACE}/octodns-sync.plan)"
-          _plan="${_plan//'%'/'%25'}"
-          _plan="${_plan//$'\n'/'%0A'}"
-          _plan="${_plan//$'\r'/'%0D'}"
-          # Set output 'plan' to $_plan
-          echo "::set-output name=plan::${_plan}"
+          chmod +x scripts/parse-plan-output.sh
+          scripts/parse-plan-output.sh "${GITHUB_WORKSPACE}/octodns-sync.plan"
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
