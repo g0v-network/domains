@@ -4,7 +4,6 @@ setup: ## Prepare your local workspace
 	pipenv install
 
 validate: ## Validate your configuration files
-	@echo Note: This was not functional last time tested. Please ignore errors...
 	$(RUN) octodns-validate --config-file config.yaml
 	@echo Config files successfully validated!
 
