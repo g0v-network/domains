@@ -11,6 +11,7 @@ on:
       # Only domain folders ending in dots.
       - "*.domain/*.yaml"
       - "config.yaml"
+      - "Pipfile*"
 
 env:
   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
