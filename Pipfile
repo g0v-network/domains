@@ -8,7 +8,7 @@ name = "pypi"
 # Will need this untile octdns > 0.9.11 is released.
 # See: https://github.com/g0v-network/domains/issues/20#issue-825088710
 octodns = "*"
-octodns-cloudflare = "*"
+octodns-cloudflare = ">=0.0.5"
 
 [dev-packages]
 
