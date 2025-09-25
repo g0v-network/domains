@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: 
-    - '.github/workflows/sync-repo-settings.yml'
-    - '.github/settings.yml'
-    # Only domain folders ending in dots.
-    - '*.domain/*.yaml'
-    - 'config.yaml'
+    paths:
+      - ".github/workflows/sync-repo-settings.yml"
+      - ".github/settings.yml"
+      # Only domain folders ending in dots.
+      - "*.domain/*.yaml"
+      - "config.yaml"
   schedule:
     # See: https://crontab.guru/#55_2_*_*_*
-    - cron: '55 2 * * *'
+    - cron: "55 2 * * *"
 
 jobs:
   sync-repo-settings:
@@ -26,7 +26,7 @@ jobs:
           # See: https://github.com/apps/repo-settings-sync-g0v-network
           application_id: 194297
           application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY_BASE64 }}
-        
+
       - uses: actions/checkout@v2
 
       - uses: exivity/actions/sync-defaults@main

@@ -16,14 +16,14 @@ talent:
 
       # Email forwarding via forwardemail.net
       # See: MX record above
-      
+
       # all@talent.c4nada.ca
       - forward-email=all:tristan@talent.c4nada.ca
       - forward-email=all:patcon@talent.c4nada.ca
 
       # platform.rebrandly@talent.c4nada.ca
       - forward-email=platform.rebrandly:all@talent.c4nada.ca
- 
+
       # platform.easyretro@talent.c4nada.ca
       - forward-email=platform.easyretro:all@talent.c4nada.ca
 
@@ -46,7 +46,7 @@ talent:
       - forward-email=patcon:patcon.slack@talent.c4nada.ca
       - forward-email=patcon:patcon.tbs@talent.c4nada.ca
       - forward-email=patcon:patcon.personal@talent.c4nada.ca
-      
+
       # tristan.slack@talent.c4nada.ca
       - forward-email=tristan.slack:tristan-email-aaaag4ol227modijkfuztkkx6y@talent-cloud.slack.com
       # tristan.tbs@talent.c4nada.ca

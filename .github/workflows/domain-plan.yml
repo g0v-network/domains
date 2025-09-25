@@ -52,7 +52,7 @@ jobs:
               echo "Warning: Skipping file with unexpected pattern: $file"
               continue
             fi
-            
+
             if git cat-file -e "$_sha:$file" 2>/dev/null; then
               _existing_files="$_existing_files $file"
             else
